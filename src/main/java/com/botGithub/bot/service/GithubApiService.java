@@ -9,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-// ✅ Correto — HttpHeaders do Spring
 import org.springframework.http.HttpHeaders;
 
 @Service
