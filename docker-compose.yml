@@ -1,0 +1,25 @@
+services:
+  github-bot:
+    build: .
+    container_name: github-bot
+    restart: always        # (1) reinicia automaticamente se travar ou PC reiniciar
+
+    ports:
+      - "8080"        # (2) expõe o BotController para você clicar nos links do email
+
+    volumes:
+      - ./state:/app/state          # estado do bot (last-commit.txt)
+      - /home/walter/Downloads/bot:/app/repo  # seu repositório local
+
+    env_file:
+      - src/main/resources/application-local.properties            # (4) lê as variáveis do seu .env
+
+    environment:
+      # (5) aponta o Spring para o diretório de estado dentro do container
+      REPO_PATH: /app/repo
+
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

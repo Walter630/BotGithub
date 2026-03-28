@@ -1,0 +1,48 @@
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+
+# Variáveis de ambiente — NUNCA commitar
+.env
+
+# Segurança extra — evita variações acidentais
+.env.local
+.env.production
+
+# Estado do bot
+last-commit.txt
+
+# Configurações locais com segredos
+application-local.properties
+src/main/resources/application-local.properties
